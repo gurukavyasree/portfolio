@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Guru Kavya Sree | Portfolio</title>
 
-  <title>Gurukavyasree Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <style>
 
@@ -13,51 +15,86 @@
       padding:0;
       box-sizing:border-box;
       font-family:Arial, sans-serif;
+      scroll-behavior:smooth;
     }
 
     body{
       background:#0f172a;
       color:white;
-      line-height:1.6;
     }
 
-    header{
-      height:100vh;
+    nav{
+      width:100%;
+      padding:20px 8%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      background:#020617;
+      position:sticky;
+      top:0;
+      z-index:1000;
+    }
+
+    nav h1{
+      color:#38bdf8;
+      font-size:28px;
+    }
+
+    nav ul{
+      display:flex;
+      gap:25px;
+      list-style:none;
+    }
+
+    nav ul li a{
+      color:white;
+      text-decoration:none;
+      transition:0.3s;
+      font-size:17px;
+    }
+
+    nav ul li a:hover{
+      color:#38bdf8;
+    }
+
+    .hero{
+      min-height:100vh;
       display:flex;
       justify-content:center;
       align-items:center;
       text-align:center;
-      padding:20px;
+      padding:40px 8%;
       background:linear-gradient(135deg,#0f172a,#1e293b);
     }
 
-    .hero{
-      max-width:700px;
-    }
-
-    .hero h1{
-      font-size:55px;
-      color:#38bdf8;
-      margin-bottom:15px;
+    .hero-content{
+      max-width:800px;
     }
 
     .hero h2{
-      font-size:28px;
+      font-size:30px;
+      color:#94a3b8;
+      margin-bottom:10px;
+    }
+
+    .hero h1{
+      font-size:70px;
+      color:#38bdf8;
       margin-bottom:20px;
-      color:#cbd5e1;
     }
 
     .hero p{
-      font-size:18px;
-      color:#94a3b8;
-      margin-bottom:30px;
+      font-size:20px;
+      line-height:1.8;
+      color:#cbd5e1;
+      margin-bottom:35px;
     }
 
     .btn{
       display:inline-block;
-      padding:12px 25px;
+      padding:14px 28px;
       margin:10px;
-      border-radius:10px;
+      border-radius:12px;
       text-decoration:none;
       font-weight:bold;
       transition:0.3s;
@@ -78,76 +115,121 @@
     }
 
     section{
-      padding:70px 10%;
+      padding:80px 10%;
     }
 
     .title{
       text-align:center;
-      font-size:40px;
-      margin-bottom:40px;
+      font-size:45px;
       color:#38bdf8;
+      margin-bottom:50px;
     }
 
-    .about,
-    .skills,
-    .projects,
-    .contact{
+    .card{
       background:#1e293b;
-      margin-bottom:30px;
+      padding:35px;
       border-radius:20px;
-      padding:40px;
+      margin-bottom:30px;
+      transition:0.3s;
     }
 
-    .about p,
-    .contact p{
-      font-size:18px;
+    .card:hover{
+      transform:translateY(-5px);
+    }
+
+    .card p{
       color:#cbd5e1;
+      line-height:1.8;
+      font-size:18px;
     }
 
-    .skills-list{
+    .skills-container{
       display:flex;
       flex-wrap:wrap;
-      gap:15px;
+      gap:20px;
       justify-content:center;
     }
 
     .skill{
+      padding:14px 24px;
+      border-radius:12px;
       background:#0f172a;
-      padding:12px 20px;
-      border-radius:10px;
       border:1px solid #38bdf8;
+      font-size:18px;
     }
 
     .project-card{
-      background:#0f172a;
-      padding:25px;
-      border-radius:15px;
+      background:#1e293b;
+      padding:35px;
+      border-radius:20px;
       margin-top:20px;
-      transition:0.3s;
-    }
-
-    .project-card:hover{
-      transform:translateY(-5px);
     }
 
     .project-card h3{
       color:#38bdf8;
-      margin-bottom:10px;
+      margin-bottom:15px;
+      font-size:28px;
     }
 
     .project-card p{
       color:#cbd5e1;
+      line-height:1.8;
+      font-size:18px;
+    }
+
+    .cert-list li{
+      margin:15px 0;
+      color:#cbd5e1;
+      font-size:18px;
+    }
+
+    .contact p{
+      margin:15px 0;
+      font-size:19px;
+      color:#cbd5e1;
+    }
+
+    .contact a{
+      color:#38bdf8;
+      text-decoration:none;
     }
 
     footer{
-      text-align:center;
-      padding:20px;
       background:#020617;
+      text-align:center;
+      padding:25px;
       color:#94a3b8;
+      margin-top:40px;
     }
 
-    a{
-      color:inherit;
+    @media(max-width:768px){
+
+      nav{
+        flex-direction:column;
+        gap:15px;
+      }
+
+      nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+      }
+
+      .hero h1{
+        font-size:45px;
+      }
+
+      .hero h2{
+        font-size:24px;
+      }
+
+      .hero p{
+        font-size:18px;
+      }
+
+      .title{
+        font-size:35px;
+      }
+
     }
 
   </style>
@@ -155,17 +237,32 @@
 
 <body>
 
-  <header>
+  <nav>
 
-    <div class="hero">
+    <h1>Kavya Sree</h1>
 
-      <h1>Gurukavyasree</h1>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
 
-      <h2>Aspiring Software Developer</h2>
+  </nav>
+
+  <div class="hero">
+
+    <div class="hero-content">
+
+      <h2>Hello, I'm</h2>
+
+      <h1>Guru Kavya Sree</h1>
 
       <p>
-        Passionate about Web Development,
-        UI Design and creating modern websites.
+        B.Tech Student | Aspiring Software Developer |
+        Passionate about Web Development, UI Design,
+        and building responsive modern websites.
       </p>
 
       <a class="btn btn1"
@@ -182,91 +279,153 @@
 
     </div>
 
-  </header>
+  </div>
 
-  <section>
+  <section id="about">
 
-    <div class="about">
+    <h2 class="title">About Me</h2>
 
-      <h2 class="title">About Me</h2>
+    <div class="card">
 
       <p>
-        I am a student interested in web development,
-        frontend designing and software technologies.
-        I enjoy creating attractive and responsive websites
-        and continuously improving my technical skills.
+        I am a motivated and detail-oriented B.Tech student
+        from Sri Venkateshwara College of Engineering with
+        a CGPA of 8.04.
       </p>
-
-    </div>
-
-    <div class="skills">
-
-      <h2 class="title">Skills</h2>
-
-      <div class="skills-list">
-
-        <div class="skill">HTML</div>
-        <div class="skill">CSS</div>
-        <div class="skill">JavaScript</div>
-        <div class="skill">Python</div>
-        <div class="skill">GitHub</div>
-        <div class="skill">Responsive Design</div>
-
-      </div>
-
-    </div>
-
-    <div class="projects">
-
-      <h2 class="title">Projects</h2>
-
-      <div class="project-card">
-
-        <h3>CreativeHub Portfolio Website</h3>
-
-        <p>
-          Developed a responsive portfolio website
-          using HTML, CSS and GitHub Pages.
-        </p>
-
-        <br>
-
-        <a href="https://gurukavyasree.github.io/creativehub_25/"
-           target="_blank">
-
-           View Project
-
-        </a>
-
-      </div>
-
-      <div class="project-card">
-
-        <h3>Frontend UI Practice Projects</h3>
-
-        <p>
-          Designed modern webpage layouts and responsive
-          interfaces for practice and learning.
-        </p>
-
-      </div>
-
-    </div>
-
-    <div class="contact">
-
-      <h2 class="title">Contact</h2>
-
-      <p>Email: yourmail@gmail.com</p>
 
       <br>
 
       <p>
-        LinkedIn:
+        I enjoy learning new technologies and creating
+        attractive responsive websites using HTML, CSS,
+        and JavaScript. I am interested in frontend
+        development, UI design, and software technologies.
+      </p>
+
+    </div>
+
+  </section>
+
+  <section id="skills">
+
+    <h2 class="title">Technical Skills</h2>
+
+    <div class="skills-container">
+
+      <div class="skill">Python</div>
+      <div class="skill">HTML</div>
+      <div class="skill">CSS</div>
+      <div class="skill">JavaScript</div>
+      <div class="skill">GitHub</div>
+      <div class="skill">Responsive Design</div>
+      <div class="skill">Data Science Basics</div>
+      <div class="skill">Internet of Things (IoT)</div>
+
+    </div>
+
+  </section>
+
+  <section id="projects">
+
+    <h2 class="title">Projects</h2>
+
+    <div class="project-card">
+
+      <h3>CreativeHub – Personal Portfolio Website</h3>
+
+      <p>
+        Developed a responsive personal portfolio website
+        using HTML, CSS, and JavaScript.
+      </p>
+
+      <br>
+
+      <p>
+        Showcased projects, skills, and contact information
+        with a modern UI design and implemented responsive
+        layouts for both mobile and desktop compatibility.
+      </p>
+
+      <br>
+
+      <p>
+        Hosted the project using GitHub Pages.
+      </p>
+
+      <br>
+
+      <a class="btn btn1"
+         href="https://gurukavyasree.github.io/creativehub_25/"
+         target="_blank">
+
+         View Live Project
+
+      </a>
+
+    </div>
+
+  </section>
+
+  <section id="certifications">
+
+    <h2 class="title">Certifications</h2>
+
+    <div class="card">
+
+      <ul class="cert-list">
+
+        <li>NPTEL – Introduction to Internet of Things</li>
+
+        <li>
+          Infosys – Introduction to Data Science
+          (June 2025)
+        </li>
+
+      </ul>
+
+    </div>
+
+  </section>
+
+  <section id="contact">
+
+    <h2 class="title">Contact</h2>
+
+    <div class="card contact">
+
+      <p>
+        📧 Email:
+        <a href="mailto:gurukavyasreedesireddy@gmail.com">
+          gurukavyasreedesireddy@gmail.com
+        </a>
+      </p>
+
+      <p>
+        📱 Phone:
+        6302787575
+      </p>
+
+      <p>
+        📍 Location:
+        Proddatur, Andhra Pradesh
+      </p>
+
+      <p>
+        🔗 LinkedIn:
         <a href="https://www.linkedin.com/in/gurukavyasree-desireddy-b808b82b7/"
            target="_blank">
 
            View Profile
+
+        </a>
+      </p>
+
+      <p>
+        💻 GitHub:
+        <a href="https://github.com/gurukavyasree"
+           target="_blank">
+
+           Visit GitHub
 
         </a>
       </p>
@@ -277,7 +436,7 @@
 
   <footer>
 
-    © 2026 Gurukavyasree | Portfolio Website
+    © 2026 Guru Kavya Sree | Portfolio Website
 
   </footer>
 
