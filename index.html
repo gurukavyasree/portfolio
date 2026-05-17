@@ -1,74 +1,285 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Kavya Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Gurukavyasree Portfolio</title>
+
   <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, sans-serif;
+    }
+
     body{
-      font-family: Arial;
       background:#0f172a;
       color:white;
+      line-height:1.6;
+    }
+
+    header{
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
       text-align:center;
-      padding:40px;
+      padding:20px;
+      background:linear-gradient(135deg,#0f172a,#1e293b);
     }
 
-    .box{
-      background:#1e293b;
-      padding:30px;
-      border-radius:20px;
+    .hero{
       max-width:700px;
-      margin:auto;
     }
 
-    h1{
+    .hero h1{
+      font-size:55px;
       color:#38bdf8;
+      margin-bottom:15px;
     }
 
-    a{
-      color:#22d3ee;
-      text-decoration:none;
-      font-size:20px;
+    .hero h2{
+      font-size:28px;
+      margin-bottom:20px;
+      color:#cbd5e1;
+    }
+
+    .hero p{
+      font-size:18px;
+      color:#94a3b8;
+      margin-bottom:30px;
     }
 
     .btn{
       display:inline-block;
-      margin-top:20px;
       padding:12px 25px;
+      margin:10px;
+      border-radius:10px;
+      text-decoration:none;
+      font-weight:bold;
+      transition:0.3s;
+    }
+
+    .btn1{
       background:#38bdf8;
       color:black;
-      border-radius:10px;
-      font-weight:bold;
     }
+
+    .btn2{
+      border:2px solid #38bdf8;
+      color:#38bdf8;
+    }
+
+    .btn:hover{
+      transform:scale(1.05);
+    }
+
+    section{
+      padding:70px 10%;
+    }
+
+    .title{
+      text-align:center;
+      font-size:40px;
+      margin-bottom:40px;
+      color:#38bdf8;
+    }
+
+    .about,
+    .skills,
+    .projects,
+    .contact{
+      background:#1e293b;
+      margin-bottom:30px;
+      border-radius:20px;
+      padding:40px;
+    }
+
+    .about p,
+    .contact p{
+      font-size:18px;
+      color:#cbd5e1;
+    }
+
+    .skills-list{
+      display:flex;
+      flex-wrap:wrap;
+      gap:15px;
+      justify-content:center;
+    }
+
+    .skill{
+      background:#0f172a;
+      padding:12px 20px;
+      border-radius:10px;
+      border:1px solid #38bdf8;
+    }
+
+    .project-card{
+      background:#0f172a;
+      padding:25px;
+      border-radius:15px;
+      margin-top:20px;
+      transition:0.3s;
+    }
+
+    .project-card:hover{
+      transform:translateY(-5px);
+    }
+
+    .project-card h3{
+      color:#38bdf8;
+      margin-bottom:10px;
+    }
+
+    .project-card p{
+      color:#cbd5e1;
+    }
+
+    footer{
+      text-align:center;
+      padding:20px;
+      background:#020617;
+      color:#94a3b8;
+    }
+
+    a{
+      color:inherit;
+    }
+
   </style>
 </head>
 
 <body>
 
-<div class="box">
-  <h1>Gurukavyasree Portfolio</h1>
+  <header>
 
-  <h2>Aspiring Software Developer</h2>
+    <div class="hero">
 
-  <p>
-    Passionate about Web Development, AI Projects,
-    and Creative UI Design.
-  </p>
+      <h1>Gurukavyasree</h1>
 
-  <h3>Projects</h3>
+      <h2>Aspiring Software Developer</h2>
 
-  <p>✔ CreativeHub Portfolio</p>
-  <p>✔ Spam Detector AI</p>
-  <p>✔ MediCare Buddy</p>
+      <p>
+        Passionate about Web Development,
+        UI Design and creating modern websites.
+      </p>
 
-  <a href="https://github.com/yourusername">
-    GitHub Profile
-  </a>
+      <a class="btn btn1"
+         href="https://github.com/gurukavyasree"
+         target="_blank">
+         GitHub
+      </a>
 
-  <br>
+      <a class="btn btn2"
+         href="https://www.linkedin.com/in/gurukavyasree-desireddy-b808b82b7/"
+         target="_blank">
+         LinkedIn
+      </a>
 
-  <a class="btn" href="https://linkedin.com">
-    Contact Me
-  </a>
-</div>
+    </div>
+
+  </header>
+
+  <section>
+
+    <div class="about">
+
+      <h2 class="title">About Me</h2>
+
+      <p>
+        I am a student interested in web development,
+        frontend designing and software technologies.
+        I enjoy creating attractive and responsive websites
+        and continuously improving my technical skills.
+      </p>
+
+    </div>
+
+    <div class="skills">
+
+      <h2 class="title">Skills</h2>
+
+      <div class="skills-list">
+
+        <div class="skill">HTML</div>
+        <div class="skill">CSS</div>
+        <div class="skill">JavaScript</div>
+        <div class="skill">Python</div>
+        <div class="skill">GitHub</div>
+        <div class="skill">Responsive Design</div>
+
+      </div>
+
+    </div>
+
+    <div class="projects">
+
+      <h2 class="title">Projects</h2>
+
+      <div class="project-card">
+
+        <h3>CreativeHub Portfolio Website</h3>
+
+        <p>
+          Developed a responsive portfolio website
+          using HTML, CSS and GitHub Pages.
+        </p>
+
+        <br>
+
+        <a href="https://gurukavyasree.github.io/creativehub_25/"
+           target="_blank">
+
+           View Project
+
+        </a>
+
+      </div>
+
+      <div class="project-card">
+
+        <h3>Frontend UI Practice Projects</h3>
+
+        <p>
+          Designed modern webpage layouts and responsive
+          interfaces for practice and learning.
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="contact">
+
+      <h2 class="title">Contact</h2>
+
+      <p>Email: yourmail@gmail.com</p>
+
+      <br>
+
+      <p>
+        LinkedIn:
+        <a href="https://www.linkedin.com/in/gurukavyasree-desireddy-b808b82b7/"
+           target="_blank">
+
+           View Profile
+
+        </a>
+      </p>
+
+    </div>
+
+  </section>
+
+  <footer>
+
+    © 2026 Gurukavyasree | Portfolio Website
+
+  </footer>
 
 </body>
 </html>
