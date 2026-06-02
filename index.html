@@ -1,328 +1,518 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Guru Kavya Sree | Portfolio</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-scroll-behavior:smooth;
-}
+  <title>Guru Kavya Sree | Portfolio</title>
 
-body{
-background:#0f172a;
-color:white;
-}
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
-header{
-position:fixed;
-top:0;
-width:100%;
-background:rgba(15,23,42,.9);
-backdrop-filter:blur(10px);
-z-index:1000;
-}
+  <style>
 
-nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 8%;
-}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+      font-family: Arial, sans-serif;
+    }
 
-.logo{
-font-size:24px;
-font-weight:700;
-color:#38bdf8;
-}
+    body {
+      background: #0f172a;
+      color: white;
+    }
 
-nav ul{
-display:flex;
-list-style:none;
-gap:25px;
-}
+    nav {
+      width: 100%;
+      background: #020617;
+      padding: 20px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
 
-nav ul li a{
-color:white;
-text-decoration:none;
-}
+    nav h1 {
+      color: #38bdf8;
+      font-size: 30px;
+    }
 
-.hero{
-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-padding:0 20px;
-background:linear-gradient(135deg,#0f172a,#1e293b);
-}
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+    }
 
-.hero-content h1{
-font-size:60px;
-margin-bottom:15px;
-}
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      transition: 0.3s;
+      font-size: 17px;
+    }
 
-.hero-content span{
-color:#38bdf8;
-}
+    nav ul li a:hover {
+      color: #38bdf8;
+    }
 
-.hero-content h2{
-font-size:24px;
-font-weight:400;
-margin-bottom:20px;
-}
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px 8%;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+    }
 
-.hero-content p{
-max-width:700px;
-margin:auto;
-line-height:1.8;
-margin-bottom:30px;
-}
+    .hero-content {
+      max-width: 800px;
+    }
 
-.btn{
-display:inline-block;
-padding:12px 25px;
-background:#38bdf8;
-color:#fff;
-text-decoration:none;
-border-radius:8px;
-margin:10px;
-transition:.3s;
-}
+    .hero h2 {
+      font-size: 30px;
+      color: #94a3b8;
+      margin-bottom: 10px;
+    }
 
-.btn:hover{
-transform:translateY(-3px);
-}
+    .hero h1 {
+      font-size: 75px;
+      color: #38bdf8;
+      margin-bottom: 20px;
+    }
 
-section{
-padding:100px 8%;
-}
+    .hero p {
+      font-size: 20px;
+      line-height: 1.8;
+      color: #cbd5e1;
+      margin-bottom: 35px;
+    }
 
-.section-title{
-text-align:center;
-font-size:40px;
-margin-bottom:50px;
-color:#38bdf8;
-}
+    .btn {
+      display: inline-block;
+      padding: 14px 30px;
+      margin: 10px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
 
-.about{
-text-align:center;
-max-width:900px;
-margin:auto;
-line-height:1.8;
-}
+    .btn1 {
+      background: #38bdf8;
+      color: black;
+    }
 
-.skills-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:20px;
-}
+    .btn2 {
+      border: 2px solid #38bdf8;
+      color: #38bdf8;
+    }
 
-.skill{
-background:#1e293b;
-padding:25px;
-border-radius:12px;
-text-align:center;
-transition:.3s;
-}
+    .btn:hover {
+      transform: scale(1.05);
+    }
 
-.skill:hover{
-transform:translateY(-5px);
-}
+    section {
+      padding: 80px 10%;
+    }
 
-.projects-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:25px;
-}
+    .title {
+      text-align: center;
+      font-size: 45px;
+      margin-bottom: 50px;
+      color: #38bdf8;
+    }
 
-.project{
-background:#1e293b;
-padding:25px;
-border-radius:12px;
-}
+    .card {
+      background: #1e293b;
+      padding: 35px;
+      border-radius: 20px;
+      margin-bottom: 30px;
+      transition: 0.3s;
+    }
 
-.project h3{
-margin-bottom:15px;
-color:#38bdf8;
-}
+    .card:hover {
+      transform: translateY(-5px);
+    }
 
-.project a{
-display:inline-block;
-margin-top:15px;
-color:#38bdf8;
-text-decoration:none;
-}
+    .card p {
+      color: #cbd5e1;
+      line-height: 1.8;
+      font-size: 18px;
+    }
 
-.contact{
-text-align:center;
-}
+    .skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
 
-.contact a{
-display:block;
-margin:15px 0;
-color:white;
-text-decoration:none;
-}
+    .skill {
+      background: #1e293b;
+      padding: 18px 28px;
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 18px;
+      transition: 0.3s;
+      border: 1px solid #38bdf8;
+    }
 
-footer{
-text-align:center;
-padding:30px;
-background:#020617;
-}
+    .skill:hover {
+      transform: scale(1.05);
+      background: #38bdf8;
+      color: black;
+    }
 
-@media(max-width:768px){
+    .skill i {
+      font-size: 28px;
+      color: #38bdf8;
+    }
 
-.hero-content h1{
-font-size:38px;
-}
+    .skill:hover i {
+      color: black;
+    }
 
-nav ul{
-display:none;
-}
+    .project-card {
+      background: #1e293b;
+      padding: 35px;
+      border-radius: 20px;
+      margin-top: 20px;
+      transition: 0.3s;
+    }
 
-.section-title{
-font-size:32px;
-}
-}
-</style>
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .project-card h3 {
+      color: #38bdf8;
+      margin-bottom: 15px;
+      font-size: 28px;
+    }
+
+    .project-card p {
+      color: #cbd5e1;
+      line-height: 1.8;
+      font-size: 18px;
+    }
+
+    .cert-list li {
+      margin: 15px 0;
+      color: #cbd5e1;
+      font-size: 18px;
+    }
+
+    .contact p {
+      margin: 15px 0;
+      color: #cbd5e1;
+      font-size: 18px;
+    }
+
+    .contact a {
+      color: #38bdf8;
+      text-decoration: none;
+    }
+
+    footer {
+      background: #020617;
+      text-align: center;
+      padding: 25px;
+      color: #94a3b8;
+      margin-top: 40px;
+    }
+
+    @media(max-width:768px) {
+
+      nav {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero h1 {
+        font-size: 50px;
+      }
+
+      .hero h2 {
+        font-size: 24px;
+      }
+
+      .hero p {
+        font-size: 18px;
+      }
+
+      .title {
+        font-size: 35px;
+      }
+
+    }
+
+  </style>
+
 </head>
 
 <body>
 
-<header>
-<nav>
-<div class="logo">KAVYA</div>
+  <!-- Navbar -->
 
-<ul>
-<li><a href="#about">About</a></li>
-<li><a href="#skills">Skills</a></li>
-<li><a href="#projects">Projects</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-</nav>
-</header>
+  <nav>
 
-<section class="hero">
+    <h1>Kavya Sree</h1>
 
-<div class="hero-content">
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
 
-<h1>Guru Kavya Sree <span>Desireddy</span></h1>
+  </nav>
 
-<h2>B.Tech CSE Student</h2>
+  <!-- Hero Section -->
 
-<p>
-Passionate Computer Science student interested in Python,
-React JS, Web Development and building innovative projects.
-Currently pursuing B.Tech at SVCE and actively looking for
-internship opportunities.
-</p>
+  <section class="hero">
 
-<a href="https://gurukavyasree.github.io/portfolio/" class="btn" target="_blank">
-View Portfolio
-</a>
+    <div class="hero-content">
 
-<a href="https://github.com/gurukavyasree" class="btn" target="_blank">
-GitHub
-</a>
+      <h2>Hello, I'm</h2>
 
-</div>
+      <h1>Guru Kavya Sree</h1>
 
-</section>
+      <p>
+        B.Tech Student | Aspiring Software Developer |
+        Passionate about Web Development, UI Design
+        and building responsive modern websites.
+      </p>
 
-<section id="about">
+      <a class="btn btn1"
+        href="https://github.com/gurukavyasree"
+        target="_blank">
 
-<h2 class="section-title">About Me</h2>
+        GitHub
 
-<div class="about">
+      </a>
 
-<p>
-I am Guru Kavya Sree Desireddy, a 3rd Year B.Tech Computer Science
-Engineering student at SVCE. I enjoy creating modern websites,
-learning new technologies and building projects that solve real-world
-problems. My primary interests include Python, React JS,
-HTML, CSS and Web Development.
-</p>
+      <a class="btn btn2"
+        href="https://www.linkedin.com/in/gurukavyasree-desireddy-b808b82b7/"
+        target="_blank">
 
-</div>
+        LinkedIn
 
-</section>
+      </a>
 
-<section id="skills">
+    </div>
 
-<h2 class="section-title">Skills</h2>
+  </section>
 
-<div class="skills-grid">
+  <!-- About -->
 
-<div class="skill">Python</div>
-<div class="skill">HTML</div>
-<div class="skill">CSS</div>
-<div class="skill">JavaScript</div>
-<div class="skill">React JS</div>
-<div class="skill">Web Development</div>
-<div class="skill">Git & GitHub</div>
+  <section id="about">
 
-</div>
+    <h2 class="title">About Me</h2>
 
-</section>
+    <div class="card">
 
-<section id="projects">
+      <p>
+        I am a motivated and detail-oriented B.Tech student
+        from Sri Venkateshwara College of Engineering
+        with a CGPA of 8.04.
+      </p>
 
-<h2 class="section-title">Projects</h2>
+      <br>
 
-<div class="projects-grid">
+      <p>
+        I enjoy learning new technologies and creating
+        attractive responsive websites using HTML, CSS,
+        and JavaScript. I am interested in frontend
+        development, UI design, and software technologies.
+      </p>
 
-<div class="project">
+    </div>
 
-<h3>CreativeHub</h3>
+  </section>
 
-<p>
-CreativeHub is a project focused on modern design,
-branding and web development concepts.
-</p>
+  <!-- Skills -->
 
-<a href="https://gurukavyasree.github.io/creativehub_25/" target="_blank">
-View Project →
-</a>
+  <section id="skills">
 
-</div>
+    <h2 class="title">Technical Skills</h2>
 
-</div>
+    <div class="skills-container">
 
-</section>
+      <div class="skill">
+        <i class="fa-brands fa-python"></i>
+        Python
+      </div>
 
-<section id="contact">
+      <div class="skill">
+        <i class="fa-brands fa-html5"></i>
+        HTML
+      </div>
 
-<h2 class="section-title">Contact Me</h2>
+      <div class="skill">
+        <i class="fa-brands fa-css3-alt"></i>
+        CSS
+      </div>
 
-<div class="contact">
+      <div class="skill">
+        <i class="fa-brands fa-js"></i>
+        JavaScript
+      </div>
 
-<a href="mailto:gurukavyasreedesireddy@gmail.com">
-📧 gurukavyasreedesireddy@gmail.com
-</a>
+      <div class="skill">
+        <i class="fa-brands fa-github"></i>
+        GitHub
+      </div>
 
-<a href="https://github.com/gurukavyasree" target="_blank">
-💻 GitHub
-</a>
+      <div class="skill">
+        <i class="fa-solid fa-mobile-screen"></i>
+        Responsive Design
+      </div>
 
-<a href="https://www.linkedin.com/in/gurukavyasree-desireddy-b808b82b7" target="_blank">
-🔗 LinkedIn
-</a>
+      <div class="skill">
+        <i class="fa-solid fa-chart-line"></i>
+        Data Science Basics
+      </div>
 
-</div>
+      <div class="skill">
+        <i class="fa-solid fa-microchip"></i>
+        IoT
+      </div>
 
-</section>
+    </div>
 
-<footer>
-© 2026 Guru Kavya Sree Desireddy | All Rights Reserved
-</footer>
+  </section>
+
+  <!-- Projects -->
+
+  <section id="projects">
+
+    <h2 class="title">Projects</h2>
+
+    <div class="project-card">
+
+      <h3>CreativeHub – Personal Portfolio Website</h3>
+
+      <p>
+        Developed a responsive personal portfolio website
+        using HTML, CSS, and JavaScript.
+      </p>
+
+      <br>
+
+      <p>
+        Showcased projects, skills, and contact information
+        with a modern UI design and responsive layouts.
+      </p>
+
+      <br>
+
+      <a class="btn btn1"
+        href="https://gurukavyasree.github.io/creativehub_25/"
+        target="_blank">
+
+        View Live Project
+
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- Certifications -->
+
+  <section id="certifications">
+
+    <h2 class="title">Certifications</h2>
+
+    <div class="card">
+
+      <ul class="cert-list">
+
+        <li>NPTEL – Introduction to Internet of Things</li>
+
+        <li>
+          Infosys – Introduction to Data Science
+          (June 2025)
+        </li>
+
+      </ul>
+
+    </div>
+
+  </section>
+
+  <!-- Contact -->
+
+  <section id="contact">
+
+    <h2 class="title">Contact</h2>
+
+    <div class="card contact">
+
+      <p>
+        📧 Email:
+        <a href="mailto:gurukavyasreedesireddy@gmail.com">
+          gurukavyasreedesireddy@gmail.com
+        </a>
+      </p>
+
+      <p>
+        📱 Phone:
+        6302787575
+      </p>
+
+      <p>
+        📍 Location:
+        Proddatur, Andhra Pradesh
+      </p>
+
+      <p>
+        🔗 LinkedIn:
+        <a href="https://www.linkedin.com/in/gurukavyasree-desireddy-b808b82b7/"
+          target="_blank">
+
+          View Profile
+
+        </a>
+      </p>
+
+      <p>
+        💻 GitHub:
+        <a href="https://github.com/gurukavyasree"
+          target="_blank">
+
+          Visit GitHub
+
+        </a>
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- Footer -->
+
+  <footer>
+
+    © 2026 Guru Kavya Sree | Portfolio Website
+
+  </footer>
 
 </body>
+
 </html>
