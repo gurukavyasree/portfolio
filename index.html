@@ -203,7 +203,7 @@
       transform: translateY(-3px);
     }
 
-    /* Reveal Animation Class */
+    /* Reveal Animation */
     .reveal {
       opacity: 0;
       transform: translateY(30px);
@@ -344,62 +344,152 @@
       color: var(--primary);
     }
 
-    /* Contact Modal Popup */
-    .modal {
+    /* Floating AI Networking Assistant Widget */
+    .ai-widget-btn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      cursor: pointer;
+      box-shadow: 0 10px 25px var(--primary-glow);
+      z-index: 1001;
+      transition: 0.3s;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.7); }
+      70% { box-shadow: 0 0 0 15px rgba(56, 189, 248, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(56, 189, 248, 0); }
+    }
+
+    .ai-widget-btn:hover {
+      transform: scale(1.1);
+    }
+
+    /* AI Chat Modal */
+    .ai-chat-box {
       display: none;
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(9, 13, 22, 0.85);
-      backdrop-filter: blur(10px);
-      z-index: 2000;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .modal-content {
-      background: #1e293b;
+      bottom: 100px;
+      right: 30px;
+      width: 360px;
+      height: 480px;
+      background: rgba(15, 23, 42, 0.95);
       border: 1px solid var(--card-border);
-      padding: 40px;
+      backdrop-filter: blur(20px);
       border-radius: 20px;
-      width: 90%;
-      max-width: 500px;
-      position: relative;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+      z-index: 1001;
+      flex-direction: column;
+      overflow: hidden;
     }
 
-    .close-btn {
-      position: absolute;
-      top: 15px;
-      right: 20px;
-      font-size: 24px;
-      color: var(--text-muted);
-      cursor: pointer;
+    .ai-chat-header {
+      background: rgba(30, 41, 59, 0.8);
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--card-border);
     }
 
-    .form-group {
-      margin-bottom: 20px;
+    .ai-chat-header h4 {
+      color: var(--primary);
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
-    .form-group label {
-      display: block;
-      margin-bottom: 8px;
+    .ai-chat-body {
+      flex: 1;
+      padding: 15px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      font-size: 14px;
+    }
+
+    .chat-msg {
+      padding: 10px 14px;
+      border-radius: 12px;
+      max-width: 85%;
+      line-height: 1.4;
+    }
+
+    .chat-msg.bot {
+      background: rgba(56, 189, 248, 0.15);
+      border: 1px solid var(--card-border);
+      align-self: flex-start;
       color: var(--text-main);
     }
 
-    .form-group input, .form-group textarea {
-      width: 100%;
+    .chat-msg.user {
+      background: var(--primary);
+      color: #000;
+      align-self: flex-end;
+      font-weight: 600;
+    }
+
+    .ai-chat-footer {
       padding: 12px;
-      border-radius: 10px;
-      border: 1px solid var(--card-border);
+      display: flex;
+      gap: 8px;
+      border-top: 1px solid var(--card-border);
+      background: rgba(30, 41, 59, 0.5);
+    }
+
+    .ai-chat-footer input {
+      flex: 1;
       background: var(--bg-dark);
+      border: 1px solid var(--card-border);
+      padding: 10px;
+      border-radius: 8px;
       color: var(--text-main);
       outline: none;
+      font-size: 13px;
     }
 
-    .form-group input:focus, .form-group textarea:focus {
-      border-color: var(--primary);
+    .ai-chat-footer button {
+      background: var(--primary);
+      border: none;
+      padding: 10px 14px;
+      border-radius: 8px;
+      color: #000;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .quick-links {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-top: 5px;
+    }
+
+    .quick-link-btn {
+      font-size: 11px;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 4px 8px;
+      border-radius: 6px;
+      color: var(--primary);
+      text-decoration: none;
+      border: 1px solid var(--card-border);
+    }
+
+    .quick-link-btn:hover {
+      background: var(--primary);
+      color: #000;
     }
 
     /* Responsive Queries */
@@ -419,6 +509,7 @@
       nav ul.active { display: flex; }
       .hero h1 { font-size: 42px; }
       .btn-group { flex-direction: column; }
+      .ai-chat-box { width: 90%; right: 5%; bottom: 90px; }
     }
   </style>
 </head>
@@ -528,3 +619,186 @@
       <ul style="list-style: none; display: flex; flex-direction: column; gap: 15px;">
         <li style="display: flex; align-items: center; gap: 15px; font-size: 18px;">
           <i class="fa-solid fa-award" style="color: var(--primary);"></i>
+          NPTEL – Introduction to Internet of Things
+        </li>
+        <li style="display: flex; align-items: center; gap: 15px; font-size: 18px;">
+          <i class="fa-solid fa-award" style="color: var(--primary);"></i>
+          Infosys – Introduction to Data Science
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact" class="reveal">
+    <h2 class="section-title">Get In Touch</h2>
+    <div class="contact-container">
+      <div class="glass-card contact-item">
+        <i class="fa-solid fa-envelope"></i>
+        <div>
+          <h4>Email</h4>
+          <a href="mailto:gurukavyasreedesireddy@gmail.com">gurukavyasreedesireddy@gmail.com</a>
+        </div>
+      </div>
+      <div class="glass-card contact-item">
+        <i class="fa-solid fa-phone"></i>
+        <div>
+          <h4>Phone</h4>
+          <p>+91 6302787575</p>
+        </div>
+      </div>
+      <div class="glass-card contact-item">
+        <i class="fa-solid fa-location-dot"></i>
+        <div>
+          <h4>Location</h4>
+          <p>Proddatur, Andhra Pradesh</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ai-widget-btn" id="ai-toggle-btn" title="Chat with AI Assistant">
+    <i class="fa-solid fa-robot"></i>
+  </div>
+
+  <div class="ai-chat-box" id="ai-chat-box">
+    <div class="ai-chat-header">
+      <h4><i class="fa-solid fa-microchip"></i> Kavya's AI Assistant</h4>
+      <i class="fa-solid fa-xmark" id="ai-close-btn" style="cursor: pointer; color: var(--text-muted);"></i>
+    </div>
+    <div class="ai-chat-body" id="chat-messages">
+      <div class="chat-msg bot">
+        👋 Hi! I'm Kavya Sree's AI Networking Assistant. Ask me about her skills, background, projects, or social handles!
+        <div class="quick-links">
+          <a href="https://www.linkedin.com/in/gurukavyasree-desireddy-b808b82b7/" target="_blank" class="quick-link-btn"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+          <a href="https://github.com/gurukavyasree" target="_blank" class="quick-link-btn"><i class="fa-brands fa-github"></i> GitHub</a>
+        </div>
+      </div>
+    </div>
+    <div class="ai-chat-footer">
+      <input type="text" id="chat-input" placeholder="Ask e.g. 'What are her skills?'">
+      <button id="send-chat-btn"><i class="fa-solid fa-paper-plane"></i></button>
+    </div>
+  </div>
+
+  <script>
+    // 1. Mobile Menu Toggle
+    const menuBtn = document.getElementById('menu-btn');
+    const navLinks = document.getElementById('nav-links');
+    menuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    // 2. Typing Effect
+    const roles = ["Aspiring Software Developer", "Frontend Developer", "UI/UX Enthusiast"];
+    let roleIndex = 0;
+    let charIndex = 0;
+    const typeWriterElement = document.getElementById('type-writer');
+
+    function typeEffect() {
+      if (charIndex < roles[roleIndex].length) {
+        typeWriterElement.textContent += roles[roleIndex].charAt(charIndex);
+        charIndex++;
+        setTimeout(typeEffect, 100);
+      } else {
+        setTimeout(eraseEffect, 2000);
+      }
+    }
+
+    function eraseEffect() {
+      if (charIndex > 0) {
+        typeWriterElement.textContent = roles[roleIndex].substring(0, charIndex - 1);
+        charIndex--;
+        setTimeout(eraseEffect, 50);
+      } else {
+        roleIndex = (roleIndex + 1) % roles.length;
+        setTimeout(typeEffect, 500);
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', typeEffect);
+
+    // 3. 3D Tilt Card Interaction
+    const card = document.getElementById('tilt-card');
+    document.addEventListener('mousemove', (e) => {
+      let xAxis = (window.innerWidth / 2 - e.pageX) / 30;
+      let yAxis = (window.innerHeight / 2 - e.pageY) / 30;
+      card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+    });
+
+    // 4. Scroll Reveal Animations
+    window.addEventListener('scroll', revealSections);
+    function revealSections() {
+      const reveals = document.querySelectorAll('.reveal');
+      for (let i = 0; i < reveals.length; i++) {
+        let windowHeight = window.innerHeight;
+        let elementTop = reveals[i].getBoundingClientRect().top;
+        let elementVisible = 150;
+        if (elementTop < windowHeight - elementVisible) {
+          reveals[i].classList.add('active');
+        }
+      }
+    }
+    revealSections();
+
+    // 5. AI Networking Assistant Chat Logic
+    const aiToggleBtn = document.getElementById('ai-toggle-btn');
+    const aiChatBox = document.getElementById('ai-chat-box');
+    const aiCloseBtn = document.getElementById('ai-close-btn');
+    const sendChatBtn = document.getElementById('send-chat-btn');
+    const chatInput = document.getElementById('chat-input');
+    const chatMessages = document.getElementById('chat-messages');
+
+    aiToggleBtn.addEventListener('click', () => {
+      aiChatBox.style.display = aiChatBox.style.display === 'flex' ? 'none' : 'flex';
+    });
+
+    aiCloseBtn.addEventListener('click', () => {
+      aiChatBox.style.display = 'none';
+    });
+
+    function addMessage(msg, sender) {
+      const msgDiv = document.createElement('div');
+      msgDiv.classList.add('chat-msg', sender);
+      msgDiv.innerHTML = msg;
+      chatMessages.appendChild(msgDiv);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    function generateAIResponse(query) {
+      const q = query.toLowerCase();
+      if (q.includes('skill') || q.includes('python') || q.includes('html') || q.includes('css') || q.includes('javascript')) {
+        return "Kavya specializes in Python, HTML5, CSS3, JavaScript, Responsive UI Design, Data Science, IoT, and GitHub.";
+      } else if (q.includes('cgpa') || q.includes('college') || q.includes('education') || q.includes('gpa')) {
+        return "Kavya is pursuing B.Tech at Sri Venkateshwara College of Engineering with an impressive CGPA of 8.04.";
+      } else if (q.includes('project') || q.includes('creativehub')) {
+        return "Her key featured project is <b>CreativeHub Portfolio</b> built using modern Web Technologies. You can check the live link in the Projects section!";
+      } else if (q.includes('contact') || q.includes('email') || q.includes('phone') || q.includes('linkedin') || q.includes('github')) {
+        return `You can reach Kavya via:<br>
+          📧 <a href='mailto:gurukavyasreedesireddy@gmail.com' style='color: var(--primary)'>gurukavyasreedesireddy@gmail.com</a><br>
+          📱 +91 6302787575<br>
+          🔗 <a href='https://www.linkedin.com/in/gurukavyasree-desireddy-b808b82b7/' target='_blank' style='color: var(--primary)'>LinkedIn Profile</a><br>
+          💻 <a href='https://github.com/gurukavyasree' target='_blank' style='color: var(--primary)'>GitHub Profile</a>`;
+      } else {
+        return "I'm trained to assist with info about Kavya's career, education, projects, and contact info! Try asking 'What are her skills?' or 'How can I contact her?'";
+      }
+    }
+
+    sendChatBtn.addEventListener('click', handleChatSubmit);
+    chatInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') handleChatSubmit();
+    });
+
+    function handleChatSubmit() {
+      const text = chatInput.value.trim();
+      if (!text) return;
+      addMessage(text, 'user');
+      chatInput.value = '';
+
+      setTimeout(() => {
+        const reply = generateAIResponse(text);
+        addMessage(reply, 'bot');
+      }, 500);
+    }
+  </script>
+</body>
+</html>
