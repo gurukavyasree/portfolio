@@ -163,13 +163,13 @@
     /* Buttons */
     .btn-group {
       display: flex;
-      gap: 20px;
+      gap: 15px;
       justify-content: center;
       flex-wrap: wrap;
     }
 
     .btn {
-      padding: 14px 32px;
+      padding: 12px 26px;
       border-radius: 14px;
       font-weight: 600;
       text-decoration: none;
@@ -179,6 +179,7 @@
       gap: 10px;
       cursor: pointer;
       border: none;
+      font-size: 14px;
     }
 
     .btn-primary {
@@ -631,9 +632,14 @@
             <span class="tech-tag">Wikipedia API</span>
           </div>
         </div>
-        <a class="btn btn-primary" href="https://github.com/gurukavyasree/Personalized-Networking-Assistant" target="_blank">
-          View Repository <i class="fa-brands fa-github"></i>
-        </a>
+        <div class="btn-group" style="justify-content: flex-start;">
+          <a class="btn btn-primary" href="https://gurukavyasree.github.io/Personalized-Networking-Assistant/" target="_blank">
+            Live App <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+          <a class="btn btn-secondary" href="https://github.com/gurukavyasree/Personalized-Networking-Assistant" target="_blank">
+            GitHub Repo <i class="fa-brands fa-github"></i>
+          </a>
+        </div>
       </div>
 
       <div class="glass-card project-card">
@@ -810,7 +816,7 @@
       } else if (q.includes('cgpa') || q.includes('college') || q.includes('education') || q.includes('gpa')) {
         return "Kavya is pursuing B.Tech at Sri Venkateshwara College of Engineering with an impressive CGPA of 8.04.";
       } else if (q.includes('project') || q.includes('creativehub') || q.includes('networking')) {
-        return "Her featured projects are:<br>1. <b>Personalized Networking Assistant</b> (Streamlit, FastAPI, DistilBERT, GPT-2)<br>2. <b>CreativeHub Portfolio</b> (HTML)";
+        return `Her featured projects are:<br>1. <a href='https://gurukavyasree.github.io/Personalized-Networking-Assistant/' target='_blank' style='color: var(--primary)'><b>Personalized Networking Assistant</b></a> (Streamlit, FastAPI, DistilBERT, GPT-2)<br>2. <a href='https://gurukavyasree.github.io/creativehub_25/' target='_blank' style='color: var(--primary)'><b>CreativeHub Portfolio</b></a> (HTML)`;
       } else if (q.includes('contact') || q.includes('email') || q.includes('phone') || q.includes('linkedin') || q.includes('github')) {
         return `You can reach Kavya via:<br>
           📧 <a href='mailto:gurukavyasreedesireddy@gmail.com' style='color: var(--primary)'>gurukavyasreedesireddy@gmail.com</a><br>
