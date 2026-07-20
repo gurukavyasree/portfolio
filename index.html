@@ -1,277 +1,334 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Guru Kavya Sree | Portfolio</title>
-
-  <!-- Font Awesome Icons -->
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <title>Guru Kavya Sree | Professional Portfolio</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
 
   <style>
+    :root {
+      --bg-dark: #090d16;
+      --card-bg: rgba(30, 41, 59, 0.4);
+      --card-border: rgba(56, 189, 248, 0.15);
+      --primary: #38bdf8;
+      --primary-glow: rgba(56, 189, 248, 0.4);
+      --accent: #818cf8;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+    }
 
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      font-family: 'Plus Jakarta Sans', sans-serif;
       scroll-behavior: smooth;
-      font-family: Arial, sans-serif;
     }
 
     body {
-      background: #0f172a;
-      color: white;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      overflow-x: hidden;
+      perspective: 1000px;
     }
 
+    /* Ambient 3D Glowing Background Elements */
+    .glow-orb {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(120px);
+      z-index: -1;
+      pointer-events: none;
+      animation: float 10s infinite alternate ease-in-out;
+    }
+    .orb-1 { width: 350px; height: 350px; background: var(--primary-glow); top: -10%; left: -5%; }
+    .orb-2 { width: 450px; height: 450px; background: rgba(129, 140, 248, 0.2); bottom: 10%; right: -10%; }
+
+    @keyframes float {
+      0% { transform: translateY(0) scale(1); }
+      100% { transform: translateY(-40px) scale(1.1); }
+    }
+
+    /* Navigation */
     nav {
+      position: fixed;
+      top: 0;
       width: 100%;
-      background: #020617;
       padding: 20px 8%;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      position: sticky;
-      top: 0;
+      background: rgba(9, 13, 22, 0.7);
+      backdrop-filter: blur(15px);
+      border-bottom: 1px solid var(--card-border);
       z-index: 1000;
     }
 
-    nav h1 {
-      color: #38bdf8;
-      font-size: 30px;
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     nav ul {
       display: flex;
       list-style: none;
-      gap: 25px;
+      gap: 30px;
     }
 
     nav ul li a {
-      color: white;
+      color: var(--text-muted);
       text-decoration: none;
+      font-weight: 600;
       transition: 0.3s;
-      font-size: 17px;
     }
 
     nav ul li a:hover {
-      color: #38bdf8;
+      color: var(--primary);
+      text-shadow: 0 0 10px var(--primary-glow);
     }
 
+    /* Hero Section */
     .hero {
       min-height: 100vh;
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
+      padding: 120px 8% 60px;
       text-align: center;
-      padding: 40px 8%;
-      background: linear-gradient(135deg, #0f172a, #1e293b);
     }
 
-    .hero-content {
-      max-width: 800px;
+    .hero-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      backdrop-filter: blur(20px);
+      padding: 60px 40px;
+      border-radius: 28px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+      transform-style: preserve-3d;
+      transition: transform 0.2s ease-out;
+      max-width: 850px;
     }
 
     .hero h2 {
-      font-size: 30px;
-      color: #94a3b8;
+      color: var(--accent);
+      font-size: 20px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
       margin-bottom: 10px;
     }
 
     .hero h1 {
-      font-size: 75px;
-      color: #38bdf8;
+      font-size: 64px;
+      font-weight: 800;
+      line-height: 1.1;
       margin-bottom: 20px;
+      background: linear-gradient(180deg, #ffffff 0%, #cbd5e1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .typing-text {
+      color: var(--primary);
+      font-weight: 600;
     }
 
     .hero p {
-      font-size: 20px;
-      line-height: 1.8;
-      color: #cbd5e1;
-      margin-bottom: 35px;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 14px 30px;
-      margin: 10px;
-      border-radius: 12px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-
-    .btn1 {
-      background: #38bdf8;
-      color: black;
-    }
-
-    .btn2 {
-      border: 2px solid #38bdf8;
-      color: #38bdf8;
-    }
-
-    .btn:hover {
-      transform: scale(1.05);
-    }
-
-    section {
-      padding: 80px 10%;
-    }
-
-    .title {
-      text-align: center;
-      font-size: 45px;
-      margin-bottom: 50px;
-      color: #38bdf8;
-    }
-
-    .card {
-      background: #1e293b;
-      padding: 35px;
-      border-radius: 20px;
-      margin-bottom: 30px;
-      transition: 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    .card p {
-      color: #cbd5e1;
-      line-height: 1.8;
       font-size: 18px;
+      color: var(--text-muted);
+      margin-bottom: 35px;
+      line-height: 1.6;
     }
 
-    .skills-container {
+    /* Buttons */
+    .btn-group {
       display: flex;
-      flex-wrap: wrap;
       gap: 20px;
       justify-content: center;
     }
 
-    .skill {
-      background: #1e293b;
-      padding: 18px 28px;
-      border-radius: 15px;
-      display: flex;
+    .btn {
+      padding: 14px 32px;
+      border-radius: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: inline-flex;
       align-items: center;
-      gap: 12px;
-      font-size: 18px;
-      transition: 0.3s;
-      border: 1px solid #38bdf8;
+      gap: 10px;
     }
 
-    .skill:hover {
-      transform: scale(1.05);
-      background: #38bdf8;
-      color: black;
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), #0284c7);
+      color: #000;
+      box-shadow: 0 10px 25px var(--primary-glow);
     }
 
-    .skill i {
-      font-size: 28px;
-      color: #38bdf8;
+    .btn-primary:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 15px 35px var(--primary-glow);
     }
 
-    .skill:hover i {
-      color: black;
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-main);
+      border: 1px solid var(--card-border);
     }
 
-    .project-card {
-      background: #1e293b;
-      padding: 35px;
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-3px);
+    }
+
+    /* General Section Layout */
+    section {
+      padding: 100px 8%;
+    }
+
+    .section-title {
+      font-size: 36px;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 60px;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: var(--primary);
+      margin: 10px auto 0;
+      border-radius: 2px;
+    }
+
+    /* Glassmorphic Cards */
+    .glass-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      backdrop-filter: blur(16px);
       border-radius: 20px;
-      margin-top: 20px;
+      padding: 35px;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .glass-card:hover {
+      transform: translateY(-8px) rotateX(2deg);
+      border-color: rgba(56, 189, 248, 0.4);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+
+    /* Grid Layouts */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 20px;
+    }
+
+    .skill-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 25px;
+      text-align: center;
       transition: 0.3s;
     }
 
-    .project-card:hover {
+    .skill-card i {
+      font-size: 40px;
+      color: var(--primary);
+      margin-bottom: 12px;
+      transition: 0.3s;
+    }
+
+    .skill-card:hover {
+      background: rgba(56, 189, 248, 0.1);
+      border-color: var(--primary);
       transform: translateY(-5px);
     }
 
+    .skill-card:hover i {
+      transform: scale(1.2);
+    }
+
+    /* Projects */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+    }
+
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
     .project-card h3 {
-      color: #38bdf8;
+      font-size: 24px;
       margin-bottom: 15px;
-      font-size: 28px;
+      color: var(--primary);
     }
 
     .project-card p {
-      color: #cbd5e1;
-      line-height: 1.8;
-      font-size: 18px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 20px;
     }
 
-    .cert-list li {
-      margin: 15px 0;
-      color: #cbd5e1;
-      font-size: 18px;
+    /* Contact Details */
+    .contact-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
     }
 
-    .contact p {
-      margin: 15px 0;
-      color: #cbd5e1;
-      font-size: 18px;
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 20px;
     }
 
-    .contact a {
-      color: #38bdf8;
+    .contact-item i {
+      font-size: 24px;
+      color: var(--primary);
+      background: rgba(56, 189, 248, 0.1);
+      padding: 15px;
+      border-radius: 12px;
+    }
+
+    .contact-item a {
+      color: var(--text-main);
       text-decoration: none;
+      transition: 0.3s;
     }
 
-    footer {
-      background: #020617;
-      text-align: center;
-      padding: 25px;
-      color: #94a3b8;
-      margin-top: 40px;
+    .contact-item a:hover {
+      color: var(--primary);
     }
 
-    @media(max-width:768px) {
-
-      nav {
-        flex-direction: column;
-        gap: 15px;
-      }
-
-      nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-
-      .hero h1 {
-        font-size: 50px;
-      }
-
-      .hero h2 {
-        font-size: 24px;
-      }
-
-      .hero p {
-        font-size: 18px;
-      }
-
-      .title {
-        font-size: 35px;
-      }
-
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      nav ul { display: none; }
+      .hero h1 { font-size: 42px; }
+      .btn-group { flex-direction: column; }
     }
-
   </style>
-
 </head>
 
 <body>
 
-  <!-- Navbar -->
+  <div class="glow-orb orb-1"></div>
+  <div class="glow-orb orb-2"></div>
 
   <nav>
-
-    <h1>Kavya Sree</h1>
-
+    <div class="logo">Guru Kavya Sree</div>
     <ul>
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
@@ -279,240 +336,140 @@
       <li><a href="#certifications">Certifications</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-
   </nav>
 
-  <!-- Hero Section -->
-
   <section class="hero">
-
-    <div class="hero-content">
-
+    <div class="hero-card" id="tilt-card">
       <h2>Hello, I'm</h2>
-
       <h1>Guru Kavya Sree</h1>
-
       <p>
-        B.Tech Student | Aspiring Software Developer |
-        Passionate about Web Development, UI Design
-        and building responsive modern websites.
+        B.Tech Student &amp; <span class="typing-text">Aspiring Software Developer</span><br>
+        Passionate about crafting high-performance responsive web applications and clean UI designs.
       </p>
-
-      <a class="btn btn1"
-        href="https://github.com/gurukavyasree"
-        target="_blank">
-
-        GitHub
-
-      </a>
-
-      <a class="btn btn2"
-        href="https://www.linkedin.com/in/gurukavyasree-desireddy-b808b82b7/"
-        target="_blank">
-
-        LinkedIn
-
-      </a>
-
+      <div class="btn-group">
+        <a class="btn btn-primary" href="https://github.com/gurukavyasree" target="_blank">
+          <i class="fa-brands fa-github"></i> GitHub
+        </a>
+        <a class="btn btn-secondary" href="https://www.linkedin.com/in/gurukavyasree-desireddy-b808b82b7/" target="_blank">
+          <i class="fa-brands fa-linkedin"></i> LinkedIn
+        </a>
+      </div>
     </div>
-
   </section>
-
-  <!-- About -->
 
   <section id="about">
-
-    <h2 class="title">About Me</h2>
-
-    <div class="card">
-
-      <p>
-        I am a motivated and detail-oriented B.Tech student
-        from Sri Venkateshwara College of Engineering
-        with a CGPA of 8.04.
+    <h2 class="section-title">About Me</h2>
+    <div class="glass-card">
+      <p style="font-size: 18px; line-height: 1.8; color: var(--text-muted);">
+        I am a detail-oriented B.Tech student from Sri Venkateshwara College of Engineering with an academic record of <strong>CGPA 8.04</strong>. 
+        Driven by technical curiosity, I specialize in web technologies, UI styling, and software principles to build scalable, high-quality dynamic digital solutions.
       </p>
-
-      <br>
-
-      <p>
-        I enjoy learning new technologies and creating
-        attractive responsive websites using HTML, CSS,
-        and JavaScript. I am interested in frontend
-        development, UI design, and software technologies.
-      </p>
-
     </div>
-
   </section>
-
-  <!-- Skills -->
 
   <section id="skills">
-
-    <h2 class="title">Technical Skills</h2>
-
-    <div class="skills-container">
-
-      <div class="skill">
+    <h2 class="section-title">Technical Expertise</h2>
+    <div class="skills-grid">
+      <div class="skill-card">
         <i class="fa-brands fa-python"></i>
-        Python
+        <h3>Python</h3>
       </div>
-
-      <div class="skill">
+      <div class="skill-card">
         <i class="fa-brands fa-html5"></i>
-        HTML
+        <h3>HTML5</h3>
       </div>
-
-      <div class="skill">
+      <div class="skill-card">
         <i class="fa-brands fa-css3-alt"></i>
-        CSS
+        <h3>CSS3</h3>
       </div>
-
-      <div class="skill">
+      <div class="skill-card">
         <i class="fa-brands fa-js"></i>
-        JavaScript
+        <h3>JavaScript</h3>
       </div>
-
-      <div class="skill">
+      <div class="skill-card">
         <i class="fa-brands fa-github"></i>
-        GitHub
+        <h3>GitHub</h3>
       </div>
-
-      <div class="skill">
+      <div class="skill-card">
         <i class="fa-solid fa-mobile-screen"></i>
-        Responsive Design
+        <h3>Responsive UI</h3>
       </div>
-
-      <div class="skill">
+      <div class="skill-card">
         <i class="fa-solid fa-chart-line"></i>
-        Data Science Basics
+        <h3>Data Science</h3>
       </div>
-
-      <div class="skill">
+      <div class="skill-card">
         <i class="fa-solid fa-microchip"></i>
-        IoT
+        <h3>IoT</h3>
       </div>
-
     </div>
-
   </section>
-
-  <!-- Projects -->
 
   <section id="projects">
-
-    <h2 class="title">Projects</h2>
-
-    <div class="project-card">
-
-      <h3>CreativeHub – Personal Portfolio Website</h3>
-
-      <p>
-        Developed a responsive personal portfolio website
-        using HTML, CSS, and JavaScript.
-      </p>
-
-      <br>
-
-      <p>
-        Showcased projects, skills, and contact information
-        with a modern UI design and responsive layouts.
-      </p>
-
-      <br>
-
-      <a class="btn btn1"
-        href="https://gurukavyasree.github.io/creativehub_25/"
-        target="_blank">
-
-        View Live Project
-
-      </a>
-
+    <h2 class="section-title">Featured Projects</h2>
+    <div class="project-grid">
+      <div class="glass-card project-card">
+        <div>
+          <h3>CreativeHub Portfolio</h3>
+          <p>An interactive, highly responsive web portfolio engineered to feature software projects, technical skillsets, and professional identity with modern frontend design.</p>
+        </div>
+        <a class="btn btn-primary" href="https://gurukavyasree.github.io/creativehub_25/" target="_blank">
+          View Live Demo <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+      </div>
     </div>
-
   </section>
-
-  <!-- Certifications -->
 
   <section id="certifications">
-
-    <h2 class="title">Certifications</h2>
-
-    <div class="card">
-
-      <ul class="cert-list">
-
-        <li>NPTEL – Introduction to Internet of Things</li>
-
-        <li>
-          Infosys – Introduction to Data Science
-          (June 2025)
+    <h2 class="section-title">Certifications</h2>
+    <div class="glass-card">
+      <ul style="list-style: none; display: flex; flex-direction: column; gap: 15px;">
+        <li style="display: flex; align-items: center; gap: 15px; font-size: 18px;">
+          <i class="fa-solid fa-award" style="color: var(--primary);"></i>
+          NPTEL – Introduction to Internet of Things
         </li>
-
+        <li style="display: flex; align-items: center; gap: 15px; font-size: 18px;">
+          <i class="fa-solid fa-award" style="color: var(--primary);"></i>
+          Infosys – Introduction to Data Science
+        </li>
       </ul>
-
     </div>
-
   </section>
-
-  <!-- Contact -->
 
   <section id="contact">
-
-    <h2 class="title">Contact</h2>
-
-    <div class="card contact">
-
-      <p>
-        📧 Email:
-        <a href="mailto:gurukavyasreedesireddy@gmail.com">
-          gurukavyasreedesireddy@gmail.com
-        </a>
-      </p>
-
-      <p>
-        📱 Phone:
-        6302787575
-      </p>
-
-      <p>
-        📍 Location:
-        Proddatur, Andhra Pradesh
-      </p>
-
-      <p>
-        🔗 LinkedIn:
-        <a href="https://www.linkedin.com/in/gurukavyasree-desireddy-b808b82b7/"
-          target="_blank">
-
-          View Profile
-
-        </a>
-      </p>
-
-      <p>
-        💻 GitHub:
-        <a href="https://github.com/gurukavyasree"
-          target="_blank">
-
-          Visit GitHub
-
-        </a>
-      </p>
-
+    <h2 class="section-title">Get In Touch</h2>
+    <div class="contact-container">
+      <div class="glass-card contact-item">
+        <i class="fa-solid fa-envelope"></i>
+        <div>
+          <h4>Email</h4>
+          <a href="mailto:gurukavyasreedesireddy@gmail.com">gurukavyasreedesireddy@gmail.com</a>
+        </div>
+      </div>
+      <div class="glass-card contact-item">
+        <i class="fa-solid fa-phone"></i>
+        <div>
+          <h4>Phone</h4>
+          <p>+91 6302787575</p>
+        </div>
+      </div>
+      <div class="glass-card contact-item">
+        <i class="fa-solid fa-location-dot"></i>
+        <div>
+          <h4>Location</h4>
+          <p>Proddatur, Andhra Pradesh</p>
+        </div>
+      </div>
     </div>
-
   </section>
 
-  <!-- Footer -->
-
-  <footer>
-
-    © 2026 Guru Kavya Sree | Portfolio Website
-
-  </footer>
-
+  <script>
+    const card = document.getElementById('tilt-card');
+    document.addEventListener('mousemove', (e) => {
+      let xAxis = (window.innerWidth / 2 - e.pageX) / 25;
+      let yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+      card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+    });
+  </script>
 </body>
-
 </html>
